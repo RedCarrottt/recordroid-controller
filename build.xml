@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Make Recordroid Controller">
+	<!--this file was created by Eclipse Runnable JAR Export Wizard -->
+	<!--ANT 1.7 is required -->
+	<property name="src" location="./src" />
+	<property name="classes" location="./bin" />
+	<path id="project.libpath">
+		<pathelement location="${classes}" />
+	</path>
+
+	<target name="create_run_jar">
+		<javac
+			srcdir="${src}"
+			destdir="${classes}"
+			includeantruntime="false">
+			<classpath refid="project.libpath" />
+		</javac>
+		<jar destfile="./out/RecordroidController.jar">
+			<manifest>
+				<attribute name="Main-Class"
+					value="com.android.server.recordroid.ControllerMain" />
+				<attribute name="Class-Path" value="." />
+			</manifest>
+			<fileset dir="./bin" />
+			<fileset dir="./img" />
+		</jar>
+	</target>
+</project>
